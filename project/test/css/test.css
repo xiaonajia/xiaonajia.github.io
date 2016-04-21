@@ -1,0 +1,43 @@
+.wrap{
+	width: 80%;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+	font-size: 14px;
+}
+
+.box{
+	margin: 15px 10px;
+	border-bottom: 1px solid #ccc;
+}
+.box h3{
+	font-weight: normal;
+	font-size: 16px;
+	padding: 5px 0;
+}
+.box h3 span{
+	color: #1463B2;
+	font-weight: bold;
+}
+.box .desc{
+	color: #666;
+	padding: 10px 0;
+}
+.box .con{
+	padding: 5px 10px;
+	position: relative;
+	background: #FAFAFA;
+	margin: 5px;
+	font-size: 14px;
+	color: #333;
+}
+.box .con:before{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 5px;
+	background: #abcdef;
+	display: block;
+	content: "";
+	overflow: hidden;
+	height: 40px;
+}

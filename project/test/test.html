@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-		<title></title>
-	</head>
-	<body>
-	</body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/test.css" />
+	<title></title>
+</head>
+<body>
+	<header>返回</header>
+	<div class="wrap">
+		<div class="box">
+			<h3><span>Q1：怎么在页面上显示json格式的数据?</span></h3>
+			<div class="con">
+				<pre>data.JSON.stringify(data, null, 2)</pre>
+			</div>
+		</div>
+		
+		<div class="box">
+			<h3><span>Q2：首字母大写</span></h3>
+			<div class="desc">eg:已知有字符串foo=”get-element-by-id”,写一个function将其转化成驼峰表示法”getElementById”</div>
+			<div class="con">
+				<pre>
+					<code>
+	firstLetterToUpperCase("get-element-by-id");
+	
+	function firstLetterToUpperCase(str) {
+		var str_arr = str.split("-"),a = [],b="",c="";
+		for(var i = 0; i < str_arr.length; i++ ){
+			b = str_arr[i].charAt(0).toUpperCase() + str_arr[i].substr(1,str_arr.length-1);
+			c = (i==0) ? str_arr[i] : b;
+			a.push(c);
+		}
+		return a.join("");
+	}
+				</code
+				</pre>
+			</div>
+		</div>
+		
+		<div class="box">
+			<h3><span>Q3：数组排列</span></h3>
+			<div class="desc">var numberArray = [3, 6, 2, 4, 1, 5]; </div>
+			<div class="desc">(1)实现对该数组的倒排，输出[5, 1, 4, 2, 6, 3]</div>
+			<div class="con">
+				<pre>
+					<code>
+	numberArray.reverse();
+					</code>
+				</pre>
+			</div>
+			<div class="desc">(2)实现对该数组降序排列，输出[6,5,4,3,2,1]</div>
+			<div class="con">
+				<pre>
+					<code>
+	numberArray.sort().reverse();
+					</code>
+				</pre>
+			</div>
+		</div>
+		
+	</div>
+	<br />
+	<div>http://www.huolg.net/css3/565</div>
+</body>
 </html>
