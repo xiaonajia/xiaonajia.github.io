@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>理赔查询</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+<link rel="stylesheet" type="text/css" href="../../css/crmStyle.css" />
+<script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../js/dotdotdot/jquery.dotdotdot.min.js"></script><!--多行文本显示省略号js-->
+<script type="text/javascript" src="../../js/touch.js"></script><!--判断滑动方向js-->
+<script type="text/javascript">
+	
+	/*向上滑动出现*/
+	touch.on(document, 'swipeup', function(ev){
+		//alert("向上滑动");
+		slideUpShowBotNav();
+	});
+	touch.on(document, 'swipedown', function(ev){
+		//alert("向下滑动");
+		slideDownHideBotNav();
+	});
+	
+	/*向上滑动时，底部导航显示*/
+	function slideUpShowBotNav(){
+		$(".ache_footer").show();
+	}
+	
+	/*向下滑动时，底部导航隐藏*/
+	function slideDownHideBotNav(){
+		$(".ache_footer").hide();
+	}
+	
+	$(function(){
+		/*多行文本显示省略号*/
+		$(".quebd_tab table td span").css({
+			'overflow':'hidden',
+			'width':'100%',
+			'max-height':'43px',
+			'display':'block'
+		}).dotdotdot();
+		
+		/*点击某一行数据，显示详情*/
+		$(".quebd_tab .table2 tr").click(function(){
+			queryLpShowDet('qy_fade','qy_con');
+		});
+	})
+	
+	/*显示蒙层*/
+	function queryLpShowDet(bg_div,show_div){
+		document.getElementById(show_div).style.display='block';
+		document.getElementById(bg_div).style.display='block' ;
+		var bgdiv = document.getElementById(bg_div);
+		bgdiv.style.width = document.body.scrollWidth;
+		bgdiv.style.height = $(document).height();
+		$("#"+bg_div).height($(document).height());
+	}
+	
+	/*关闭蒙层*/
+	function queryLpHideDet(bg_div,show_div){
+		$("#"+bg_div).hide();
+		$("#"+show_div).hide();
+	}
+</script>
+</head>
+
+<body class="quebd">
+
+	<!--头部-->
+    <header class="quebd_head">
+        <div class="fl divl"></div>
+        <div class="fl divm">
+        	<ul>
+            	<li onClick="window.location.href='query_yf_bd.html'">保单查询</li>
+                <li class="current" onClick="window.location.href='query_yf_lp.html'">理赔查询</li>
+            </ul>
+        </div>
+        <div class="fl divr box-sizing" onClick="window.location.href='query_yf_lpchoice.html'">筛选<img src="../../images/ach_choice.png" /></div>
+    </header>
+    
+    <div class="quebd_gjd">共<span>7</span>单</div>
+    
+    <!--主体-->
+    <div class="quebd_tab">
+    
+    	<!--头部标题表格-->
+    	<table class="table1" cellpadding="0" cellspacing="0">
+        	<tr>
+            	<td>团体客户名称</td>
+                <td>保单号</td>
+                <td>出险人</td>
+                <td>本案应付<br/>（元）</td>
+                <td></td>
+            </tr>
+        </table>
+        
+        <!--数据表格-->
+        <table class="table2" cellpadding="0" cellspacing="0">
+        	<tr onClick="">
+            	<td><span>北京科技公司北北京科技公司北北京科技公司北北京科技公司北</span></td>
+                <td><span>1120345678</span></td>
+                <td><span>张三</span></td>
+                <td><span>10000</span></td>
+                <td><img src="../../images/ach_choice_arr.png" /></td>
+            </tr>
+            <tr>
+            	<td><span>北京科技</span></td>
+                <td><span>1120345678</span></td>
+                <td><span>李四</span></td>
+                <td><span>20万</span></td>
+                <td><img src="../../images/ach_choice_arr.png" /></td>
+            </tr>
+            <tr>
+            	<td><span>北京科技公司北北京科技公司北北京科技公司北北京科技公司北</span></td>
+                <td><span>1120345678</span></td>
+                <td><span>王五</span></td>
+                <td><span>10万</span></td>
+                <td><img src="../../images/ach_choice_arr.png" /></td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- 底部-->
+    <footer class="ache_footer" style="display:none;">
+    	<ul>
+        	<li class="achefoot_li1" onClick="window.location.href='../home.html'"><a href="#">首页</a></li>
+            <li class="current" onClick="window.location.href='query_yf_bd.html'"><a href="#">员福</a></li>
+            <li><a href="#" onClick="window.location.href='query_nj_qy.html'">年金</a></li>
+            <li><a href="#" onClick="window.location.href='query_bbc_gc.html'">BBC</a></li>
+        </ul>
+    </footer>
+    
+    <!--弹出层-->
+    <div id="qy_fade" class="black_overlay" style="display:none"></div>
+    <div id="qy_con" class="querylp_mc" style="display:none;">
+    	<div class="querylpm_top">
+        	<table cellpadding="0" cellspacing="0">
+            	<tr>
+                	<td>出险类型</td>
+                    <td>＊＊＊＊＊＊</td>
+                </tr>
+                <tr>
+                	<td>受理日期</td>
+                    <td>2015-03-12</td>
+                </tr>
+                <tr>
+                	<td>理赔状态</td>
+                    <td>正在受理</td>
+                </tr>
+                <tr>
+                	<td>给付日期</td>
+                    <td>无</td>
+                </tr>
+                <tr>
+                	<td>客户经理</td>
+                    <td>张三</td>
+                </tr>
+            </table>
+        </div>
+        <div class="btn_single" onClick="queryLpHideDet('qy_fade','qy_con')">关　　闭</div>
+    </div>
+    
+</body>
+</html>

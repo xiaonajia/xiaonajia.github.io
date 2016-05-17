@@ -1,0 +1,427 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>我的商机</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+<link rel="stylesheet" type="text/css" href="../../css/crmStyle.css" />
+<script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../js/touch.js"></script><!--判断滑动方向js-->
+<script type="text/javascript" src="../../js/customer.js"></script>
+<script type="text/javascript">
+	touch.on(document, 'swipeup', function(ev){
+		//alert("向上滑动");
+		slideUpShowBotNav();
+	});
+	touch.on(document, 'swipedown', function(ev){
+		//alert("向下滑动");
+		slideDownHideBotNav();
+	});
+	
+	/*向上滑动时，底部导航显示*/
+	function slideUpShowBotNav(){
+		$(".ache_footer").show();
+	}
+	
+	/*向下滑动时，底部导航隐藏*/
+	function slideDownHideBotNav(){
+		$(".ache_footer").hide();
+	}
+</script>
+</head>
+
+<body class="my_customer" style="position:relative;">
+    
+    <!--搜索-->
+    <div class="myC_searchwrap box-sizing">
+    	<div class="myC_searleft fl">
+        	<div class="fl myC_searleftl" id="customName"><span>员福</span><i></i></div>
+            <div class="fl myC_searleftr  box-sizing">
+            	<input type="text" placeholder="搜索商机名称" /><img style="display:none;" src="../../images/input_empty.png" />
+            </div>
+        </div>
+        <div class="myC_searright fl" style="display:none;">搜索</div>
+    </div>
+    
+    <!--下拉菜单-->
+    <div id="myC_droplist" class="myC_seardroplist box-sizing" style="display:none; top:38px;">
+    	<div class="myC_triwrap"><span class="myC_triangle"></span></div>
+        <ul>
+        	<li>全部</li>
+            <li>年金</li>
+            <li>C业务</li>
+        </ul>
+    </div>
+    
+    
+    <div id="resultSet">
+    
+        <!--共几条记录-->
+        <div class="myC_result">
+        	<span class="myBus_sx" onClick="window.location.href='busiChoice.html'">筛选<img src="../../images/ach_choice.png" /></span>
+            共查找到<span>13</span>个结果
+        </div>
+        
+        <!--记录详情-->
+        <div class="myC_con myBus_con">
+            <ul>
+            
+                <!--第一条记录 ==== 员福 ===== -->
+                <li id="myCcon_li1">
+                	<div >
+                        <div class="myCc_litop">
+                            <div class="fl myCc_litopl myBuscon_topl" onClick="checkDetail('myCcon_li1');">
+                                <!--<h2 class="singledotdot">1.<span>北京航天商机</span><b class="yf">员福</b></h2>-->
+                                <h2><strong>1.</strong><span class="singledotdot">北京航天商机北京航天商机</span><p><b class="yf">员福</b></p></h2>
+                            </div>
+                            <div class="fr myCc_litopr myBuscon_topr" onClick="window.location.href='newBusi_yf.html'">
+                                <span class="xgbtn">修改</span>
+                            </div>
+                        </div>
+                        <div class="myCc_libot myBuscon_bot">
+                            <div class="fl myCc_libotl">
+                                <p>接触层次：<span>经理</span></p>
+                            </div>
+                            <div class="fr myCc_libotr">
+                                <p>业务所处阶段：<span>洽谈</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--第一层展开-->
+                    <div class="myCc_zkwrap myBus_zkwrap" style="display:none;">
+                    	<div class="myBusconDetail">
+                        	<ul onClick="checkDetailDetail('myCcon_li1');">
+                            	<li>北京航天科技有限公司</li>
+                                <li>联系人：<span>张三</span></li>
+                                <li>联系电话：<span>13800876590</span></li>
+                                <li>预计签约时间：<span>2015-03-03</span></li>
+                            </ul>
+                        </div>
+                        <!--第二层展开-->
+                        <div class="myBusconDetailDetail" style="display:none;">
+                        	<div class="myCc_zk1">
+                                <table class="table1" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>部门</td>
+                                        <td>电子销售</td>
+                                    </tr>
+                                    <tr>
+                                        <td>职位</td>
+                                        <td>职员</td>
+                                    </tr>
+                                    <tr>
+                                        <td>电话</td>
+                                        <td>1385579650</td>
+                                    </tr>
+                                    <tr>
+                                        <td>非健康险(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>健康险(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>特需金(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>团体分红(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>团体万能(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>产品类别</td>
+                                        <td>电话销售类</td>
+                                    </tr>
+                                    <tr>
+                                        <td>备注</td>
+                                        <td>无</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="myCc_zk3" onClick="closeDetail('myCcon_li1');"><img src="../../images/myC_zk.png" /></div>
+                        </div>
+                    </div>
+                </li>
+                
+                
+                <!--第一条记录 ==== 年金 ===== -->
+                <li id="myCcon_li2">
+                	<div >
+                        <div class="myCc_litop">
+                            <div class="fl myCc_litopl myBuscon_topl" onClick="checkDetail('myCcon_li2');">
+                                <h2><strong>1.</strong><span class="singledotdot">北京航天商</span><p><b class="nj">年金</b></p></h2>
+                            </div>
+                            <div class="fr myCc_litopr myBuscon_topr" onClick="window.location.href='newBusi_nj.html'">
+                                <span class="xgbtn">修改</span>
+                            </div>
+                        </div>
+                        <div class="myCc_libot myBuscon_bot">
+                            <div class="fl myCc_libotl">
+                                <p>接触层次：<span>经理</span></p>
+                            </div>
+                            <div class="fr myCc_libotr">
+                                <p>业务所处阶段：<span>洽谈</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--第一层展开-->
+                    <div class="myCc_zkwrap myBus_zkwrap" style="display:none;">
+                    	<div class="myBusconDetail">
+                        	<ul onClick="checkDetailDetail('myCcon_li2');">
+                            	<li>北京航天科技有限公司</li>
+                                <li>联系人：<span>张三</span></li>
+                                <li>联系电话：<span>13800876590</span></li>
+                                <li>预计签约时间：<span>2015-03-03</span></li>
+                            </ul>
+                        </div>
+                        <!--第二层展开-->
+                        <div class="myBusconDetailDetail" style="display:none;">
+                        	<div class="myCc_zk1">
+                                <table class="table1" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>部门</td>
+                                        <td>电子销售</td>
+                                    </tr>
+                                    <tr>
+                                        <td>职位</td>
+                                        <td>职员</td>
+                                    </tr>
+                                    <tr>
+                                        <td>电话</td>
+                                        <td>1385579650</td>
+                                    </tr>
+                                    <tr>
+                                        <td>非健康险(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>健康险(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>特需金(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>团体分红(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>团体万能(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>产品类别</td>
+                                        <td>电话销售类</td>
+                                    </tr>
+                                    <tr>
+                                        <td>备注</td>
+                                        <td>无</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="myCc_zk3" onClick="closeDetail('myCcon_li2');"><img src="../../images/myC_zk.png" /></div>
+                        </div>
+                    </div>
+                </li>
+                
+                <!--第一条记录 ==== BBC ===== -->
+                <li id="myCcon_li3">
+                	<div >
+                        <div class="myCc_litop">
+                            <div class="fl myCc_litopl myBuscon_topl" onClick="checkDetail('myCcon_li3');">
+                                <h2><strong>1.</strong><span class="singledotdot">北京航天商</span><p><b class="bbc">BBC</b></p></h2>
+                            </div>
+                            <div class="fr myCc_litopr myBuscon_topr" onClick="window.location.href='newBusi_bbc.html'">
+                                <span class="xgbtn">修改</span>
+                            </div>
+                        </div>
+                        <div class="myCc_libot myBuscon_bot">
+                            <div class="fl myCc_libotl">
+                                <p>接触层次：<span>经理</span></p>
+                            </div>
+                            <div class="fr myCc_libotr">
+                                <p>业务所处阶段：<span>洽谈</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--第一层展开-->
+                    <div class="myCc_zkwrap myBus_zkwrap" style="display:none;">
+                    	<div class="myBusconDetail">
+                        	<ul onClick="checkDetailDetail('myCcon_li3');">
+                            	<li>北京航天科技有限公司</li>
+                                <li>联系人：<span>张三</span></li>
+                                <li>联系电话：<span>13800876590</span></li>
+                                <li>预计签约时间：<span>2015-03-03</span></li>
+                            </ul>
+                        </div>
+                        <!--第二层展开-->
+                        <div class="myBusconDetailDetail" style="display:none;">
+                        	<div class="myCc_zk1">
+                                <table class="table1" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>部门</td>
+                                        <td>电子销售</td>
+                                    </tr>
+                                    <tr>
+                                        <td>职位</td>
+                                        <td>职员</td>
+                                    </tr>
+                                    <tr>
+                                        <td>电话</td>
+                                        <td>1385579650</td>
+                                    </tr>
+                                    <tr>
+                                        <td>非健康险(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>健康险(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>特需金(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>团体分红(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>团体万能(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>产品类别</td>
+                                        <td>电话销售类</td>
+                                    </tr>
+                                    <tr>
+                                        <td>备注</td>
+                                        <td>无</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="myCc_zk3" onClick="closeDetail('myCcon_li3');"><img src="../../images/myC_zk.png" /></div>
+                        </div>
+                    </div>
+                </li>
+                
+                <!--第一条记录 ==== BBC  按钮不可点 ===== -->
+                <li id="myCcon_li3">
+                	<div >
+                        <div class="myCc_litop">
+                            <div class="fl myCc_litopl myBuscon_topl" onClick="checkDetail('myCcon_li3');">
+                                <h2><strong>1.</strong><span class="singledotdot">北京航天商</span><p><b class="bbc">BBC</b></p></h2>
+                            </div>
+                            <div class="fr myCc_litopr myBuscon_topr" onClick="alert('权限不够，按钮不可点击！')">
+                                <!--上级不能修改下级商机权限，不能修改时，按钮变灰色-->
+                                <span class="xgbtn xgbtn_gray">修改</span>
+                            </div>
+                        </div>
+                        <div class="myCc_libot myBuscon_bot">
+                            <div class="fl myCc_libotl">
+                                <p>接触层次：<span>经理</span></p>
+                            </div>
+                            <div class="fr myCc_libotr">
+                                <p>业务所处阶段：<span>洽谈</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--第一层展开-->
+                    <div class="myCc_zkwrap myBus_zkwrap" style="display:none;">
+                    	<div class="myBusconDetail">
+                        	<ul onClick="checkDetailDetail('myCcon_li3');">
+                            	<li>北京航天科技有限公司</li>
+                                <li>联系人：<span>张三</span></li>
+                                <li>联系电话：<span>13800876590</span></li>
+                                <li>预计签约时间：<span>2015-03-03</span></li>
+                            </ul>
+                        </div>
+                        <!--第二层展开-->
+                        <div class="myBusconDetailDetail" style="display:none;">
+                        	<div class="myCc_zk1">
+                                <table class="table1" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>部门</td>
+                                        <td>电子销售</td>
+                                    </tr>
+                                    <tr>
+                                        <td>职位</td>
+                                        <td>职员</td>
+                                    </tr>
+                                    <tr>
+                                        <td>电话</td>
+                                        <td>1385579650</td>
+                                    </tr>
+                                    <tr>
+                                        <td>非健康险(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>健康险(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>特需金(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>团体分红(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>团体万能(万元)</td>
+                                        <td>¥0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>产品类别</td>
+                                        <td>电话销售类</td>
+                                    </tr>
+                                    <tr>
+                                        <td>备注</td>
+                                        <td>无</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="myCc_zk3" onClick="closeDetail('myCcon_li3');"><img src="../../images/myC_zk.png" /></div>
+                        </div>
+                    </div>
+                </li>
+               
+            </ul>
+        </div>
+        
+        <!--没有更多-->
+        <div class="myC_nomore">没有更多</div>
+    </div>
+    
+    <!--大加号-->
+    <div class="myC_add" onClick="window.location.href='newBusi_yf.html'"><img src="../../images/addmore.png" /></div>
+    
+    <!--蒙层-->
+    <div id="fade" class="black_overlay" onClick="closeDivAll()"></div>
+	
+    <!-- 底部-->
+    <!--<footer class="ache_footer" style="display:none;">
+    	<ul>
+        	<li class="achefoot_li1"><a href="#">首页</a></li>
+            <li class="current"><a href="#">员福</a></li>
+            <li><a href="#">年金</a></li>
+            <li><a href="#">BBC</a></li>
+        </ul>
+    </footer>-->
+    
+</body>
+</html>

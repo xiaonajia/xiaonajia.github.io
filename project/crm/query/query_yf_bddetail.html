@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>业务查询</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+<link rel="stylesheet" type="text/css" href="../../css/crmStyle.css" />
+<script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../js/dotdotdot/jquery.dotdotdot.min.js"></script><!--多行文本显示省略号js-->
+<script type="text/javascript" src="../../js/touch.js"></script><!--判断滑动方向js-->
+<script type="text/javascript">
+	
+	/*向上滑动出现*/
+	touch.on(document, 'swipeup', function(ev){
+		//alert("向上滑动");
+		slideUpShowBotNav();
+	});
+	touch.on(document, 'swipedown', function(ev){
+		//alert("向下滑动");
+		slideDownHideBotNav();
+	});
+	
+	/*向上滑动时，底部导航显示*/
+	function slideUpShowBotNav(){
+		$(".ache_footer").show();
+	}
+	
+	/*向下滑动时，底部导航隐藏*/
+	function slideDownHideBotNav(){
+		$(".ache_footer").hide();
+	}
+	
+	$(function(){
+		/*多行文本显示省略号*/
+		$(".quebd_tab table td span").css({
+			'overflow':'hidden',
+			'width':'100%',
+			'max-height':'43px',
+			'display':'block'
+		}).dotdotdot();
+	})
+	
+	/*展开详情 -- id 为最外层li的id号*/
+	function checkDetail(id){
+		var $detail = $("#"+id+" .quebddetc_detail");
+		if($detail.is(":hidden")){
+			$detail.show();
+		}else{
+			$detail.hide();
+		}
+	}
+	
+	/*关闭详情*/
+	function closeDetail(id){
+		var $detail = $("#"+id+" .quebddetc_detail");
+		$detail.hide();
+	}
+	
+</script>
+</head>
+
+<body class="quebddet">
+
+	<!--头部-->
+    <header class="quebddet_head">
+       <table cellpadding="0" cellspacing="0">
+       		<tr>
+            	<td>团体客户名称</td>
+                <td>北京航天科技股份有限公司</td>
+            </tr>
+            <tr>
+            	<td>保单号</td>
+                <td>1120345678</td>
+            </tr>
+       </table>
+       <div class="divbot">
+       		<div class="fl">
+            	<p class="p1">2015-12-12</p>
+                <p class="p2">转保时间</p>
+            </div>
+            <div class="fr">
+            	<p class="p1">100</p>
+                <p class="p2">总保费（万元）</p>
+            </div>
+       </div>
+    </header>
+    
+    <!--主体-->
+    <div class="quebddet_con mb40">
+    	
+        <!--第一条数据-->
+    	<div id="quebddet_record1" class="quebddetc_jl">
+            <div class="quebddetc_title btn_jianb2" onClick="checkDetail('quebddet_record1');">
+                <div class="fl">
+                    <p class="p_lt">1、险种号</p>
+                    <p class="p_lb">11234567890000011</p>
+                </div>
+                <div class="fr">
+                    <p class="p_rt">险种保费</p>
+                    <p class="p_rb">¥300.00</p>
+                </div>
+            </div>
+            <div class="quebddetc_detail" style="display:none;">
+            	<table cellpadding="0" cellspacing="0">
+                	<tr>
+                    	<td>管理费</td>
+                        <td>123.12元</td>
+                    </tr>
+                    <tr>
+                    	<td>被保险人数</td>
+                        <td>2400人</td>
+                    </tr>
+                    <tr>
+                    	<td>业务渠道</td>
+                        <td>综合开拓</td>
+                    </tr>
+                    <tr>
+                    	<td>工号</td>
+                        <td>11432467531</td>
+                    </tr>
+                    <tr>
+                    	<td>人员渠道</td>
+                        <td>电销</td>
+                    </tr>
+                    <tr>
+                    	<td>所属客户经理</td>
+                        <td>张三</td>
+                    </tr>
+                </table>
+            </div>     
+        </div>
+        
+        <!--第二条数据-->
+    	<div id="quebddet_record2" class="quebddetc_jl">
+            <div class="quebddetc_title btn_jianb2" onClick="checkDetail('quebddet_record2');">
+                <div class="fl">
+                    <p class="p_lt">2、险种号</p>
+                    <p class="p_lb">11234567890000011</p>
+                </div>
+                <div class="fr">
+                    <p class="p_rt">险种保费</p>
+                    <p class="p_rb">¥300.00</p>
+                </div>
+            </div>
+            <div class="quebddetc_detail" style="display:none;">
+            	<table cellpadding="0" cellspacing="0">
+                	<tr>
+                    	<td>管理费</td>
+                        <td>123.12元</td>
+                    </tr>
+                    <tr>
+                    	<td>被保险人数</td>
+                        <td>2400人</td>
+                    </tr>
+                    <tr>
+                    	<td>业务渠道</td>
+                        <td>综合开拓</td>
+                    </tr>
+                    <tr>
+                    	<td>工号</td>
+                        <td>11432467531</td>
+                    </tr>
+                    <tr>
+                    	<td>人员渠道</td>
+                        <td>电销</td>
+                    </tr>
+                    <tr>
+                    	<td>所属客户经理</td>
+                        <td>张三</td>
+                    </tr>
+                </table>
+            </div>     
+        </div>
+        
+    </div>
+    
+    <!-- 底部-->
+    <footer class="ache_footer" style="display:none;">
+    	<ul>
+        	<li class="achefoot_li1" onClick="window.location.href='../home.html'"><a href="#">首页</a></li>
+            <li class="current" onClick="window.location.href='query_yf_bd.html'"><a href="#">员福</a></li>
+            <li><a href="#" onClick="window.location.href='query_nj_qy.html'">年金</a></li>
+            <li><a href="#" onClick="window.location.href='query_bbc_gc.html'">BBC</a></li>
+        </ul>
+    </footer>
+    
+</body>
+</html>

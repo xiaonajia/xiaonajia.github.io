@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>净资产／投资收益</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+<link rel="stylesheet" type="text/css" href="../../css/crmStyle.css" />
+<script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../js/dotdotdot/jquery.dotdotdot.min.js"></script><!--多行文本显示省略号js-->
+<script type="text/javascript" src="../../js/touch.js"></script><!--判断滑动方向js-->
+<script type="text/javascript">
+	
+	/*向上滑动出现*/
+	touch.on(document, 'swipeup', function(ev){
+		//alert("向上滑动");
+		slideUpShowBotNav();
+	});
+	touch.on(document, 'swipedown', function(ev){
+		//alert("向下滑动");
+		slideDownHideBotNav();
+	});
+	
+	/*向上滑动时，底部导航显示*/
+	function slideUpShowBotNav(){
+		$(".ache_footer").show();
+	}
+	
+	/*向下滑动时，底部导航隐藏*/
+	function slideDownHideBotNav(){
+		$(".ache_footer").hide();
+	}
+	
+	$(function(){
+		/*多行文本显示省略号*/
+		$(".quebd_tab table td span").css({
+			'overflow':'hidden',
+			'width':'100%',
+			'max-height':'43px',
+			'display':'block'
+		}).dotdotdot();
+	})
+	
+</script>
+</head>
+
+<body class="qy_njqy qy_njjzc">
+
+	<!--头部-->
+    <header>
+        <ul>
+            <li onClick="window.location.href='query_nj_qy.html'">签约查询</li>
+            <li onClick="window.location.href='query_nj_dz.html'">到账查询</li>
+            <li class="current" onClick="window.location.href='query_nj_jzc.html'">净资产／<br/>投资收益查询</li>
+        </ul>
+    </header>
+    
+    <div class="quebd_gjd" style="overflow:hidden;">
+    	<div class="fl">共<span>7</span>单</div>
+        <div class="fr" onClick="window.location.href='query_nj_jzcchoice.html'">筛选<img src="../../images/ach_choice.png" /></div>
+    </div>
+    
+    <!--主体-->
+    <div class="quebd_tab">
+    
+    	<!--头部标题表格-->
+    	<table class="table1" cellpadding="0" cellspacing="0">
+        	<tr>
+            	<td>客户名称</td>
+                <td>计划类型</td>
+                <td>受托净资产<br/>（万元）</td>
+                <td>统计截止日期</td>
+                <td></td>
+            </tr>
+        </table>
+        
+        <!--数据表格-->
+        <table class="table2" cellpadding="0" cellspacing="0">
+        	<tr onClick="window.location.href='query_nj_jzcdetail.html'">
+            	<td><span>北京科技公司北北京科技公司北北京科技公司北北京科技公司北</span></td>
+                <td><span>***</span></td>
+                <td><span>100</span></td>
+                <td><span>2015-12-12</span></td>
+                <td><img src="../../images/ach_choice_arr.png" /></td>
+            </tr>
+            <tr onClick="window.location.href='query_nj_jzcdetail.html'">
+            	<td><span>北京科技</span></td>
+                <td><span>***</span></td>
+                <td><span>10</span></td>
+                <td><span>2015-12-12</span></td>
+                <td><img src="../../images/ach_choice_arr.png" /></td>
+            </tr>
+            <tr onClick="window.location.href='query_nj_jzcdetail.html'">
+            	<td><span>北京科技公司北北京科技公司北北京科技公司北北京科技公司北</span></td>
+                <td><span>***</span></td>
+                <td><span>20</span></td>
+                <td><span>2015-12-12</span></td>
+                <td><img src="../../images/ach_choice_arr.png" /></td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- 底部-->
+    <footer class="ache_footer" style="display:none;">
+    	<ul>
+        	<li class="achefoot_li1" onClick="window.location.href='../home.html'"><a href="#">首页</a></li>
+            <li onClick="window.location.href='query_yf_bd.html'"><a href="#">员福</a></li>
+            <li class="current"><a href="#" onClick="window.location.href='query_nj_qy.html'">年金</a></li>
+            <li><a href="#" onClick="window.location.href='query_bbc_gc.html'">BBC</a></li>
+        </ul>
+    </footer>
+    
+</body>
+</html>
