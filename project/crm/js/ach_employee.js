@@ -1,9 +1,0 @@
-// JavaScript Document
-
-	$(function(){
-		
-		
-		
-		
-	})
-	
