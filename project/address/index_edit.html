@@ -9,17 +9,44 @@
 			margin: 0;
 			padding: 0;
 			list-style: none;
+			font-family: "微软雅黑";
 		}
 		.addr_edit{
 			background: #fff;
-			font-family: "微软雅黑";
 		}
 		.addr_edit .edit_con{
 			width: 100%;
+		}
+		.addr_edit .edit_con tr td{
+			border-bottom: 1px solid #e3e5e9;
+			color: #2c2c2f;
+		}
+		.addr_edit .edit_con tr td:nth-child(1){
+			padding-left: 10px;
+			width: 33%;
+		}
+		.addr_edit .edit_con tr td:nth-child(2){
+			padding-right: 10px;
 			
 		}
-		
-		
+		.addr_edit .edit_con tr td:nth-child(2) input,
+		.addr_edit .edit_con tr td:nth-child(2) textarea{
+			border: 0;
+			width: 100%;
+			padding: 10px 0;
+			line-height: 24px;
+			font-size: 16px;
+			resize: none;
+		}
+		.addr_edit .edit_con .addr_textarea{
+			vertical-align: top; 
+			padding-top: 10px;
+		}
+		.addr_edit .edit_con tr td:nth-child(2) input:focus,
+		.addr_edit .edit_con tr td:nth-child(2) textarea:focus{
+			outline: none;
+			border: 0;
+		}
 		.addr_edit .add_btn{
 			position: fixed;
 			left: 5%;
@@ -41,6 +68,7 @@
 			background: #FF8D00;
 			color: #fff;
 		}
+		
 	</style>
 </head>
 <body class="addr_edit">
@@ -53,10 +81,7 @@
 				<td>联系方式：</td><td><input type="text" value=""  /></td>
 			</tr>
 			<tr>
-				<td>所在地区：</td><td><input type="text" value=""  /></td>
-			</tr>
-			<tr>
-				<td>详细地址：</td><td><textarea></textarea></td>
+				<td class="addr_textarea">收货地址：</td><td><textarea></textarea></td>
 			</tr>
 		</tbody>
 	</table>
