@@ -1,0 +1,163 @@
+<!DOCTYPE >
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<script type="text/javascript" src="jquery-1.10.2.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul,li{
+			list-style: none;
+		}
+		.box{
+			width: 1000px;
+			margin: 100px auto;
+			overflow: hidden;
+			position: relative;
+			padding: 0 20px 15px;
+		}
+		.box:before{
+			position: absolute;
+			display: block;
+			content: "";
+			left: 0;
+			right: 0;
+			bottom: 10px;
+			background:  #0a4099;
+			height: 10px;
+			width: 100%;
+			border-radius: 8px 8px 0 0;
+			z-index: 5;
+		}
+		.box ul{
+			height: 30px;
+			width: 100%;
+			overflow: hidden;
+			margin-bottom: 0;
+			position: relative;
+		}
+		.box li{
+			position: absolute;
+			width: 33.3%;
+		}
+		.box li.li_1{
+			left: 0.5%;
+			z-index: 3;
+		}	
+		.box li.li_2{
+			left: 33%;
+			z-index: 2;
+		}	
+		.box li.li_3{
+			left: 65.5%;
+			z-index: 1;
+		}	
+		.box li span{
+			display:block;
+			width: 100%;
+			overflow: hidden;
+			text-align: center;
+			color: #fff;
+			height: 30px;
+			line-height: 25px;
+			cursor: pointer;
+			position: relative;
+		}
+		.box li span em{
+			display: block;
+			margin: 0 13px;
+			background: #5e5c5c;
+			font-style: normal;
+		}
+		.box li b,
+		.box li b.b2,
+		.box li.active b,
+		.box li.active b.b2{
+			float: left;
+			width: 13px;
+			height: 26px;
+			background: url("gray_left.png") no-repeat;
+			background-size: 100% 100%;
+		}
+		.box li b.b2{
+			float: right;
+			background: url("gray_right.png") no-repeat;
+			background-size: 100% 100%;
+		}
+		.box li.active{
+			z-index: 4;
+		}
+		.box li.active b{
+			background: url("blue_left.png") no-repeat;
+			background-size: 100% 100%;
+		}
+		.box li.active b.b2{
+			float: right;
+			background: url("blue_right.png") no-repeat;
+			background-size: 100% 100%;
+		}
+		.box li.active span em{
+			background: #0a4099;
+		}
+		
+		.box li:before,
+		.box li.active:before{
+			width: 0;
+			height: 0;
+			border-bottom: 18px solid #474747;
+			border-left: 9px solid transparent;
+			border-right: 14px solid transparent;
+			display: block;
+			content: "";
+			position: absolute;
+			left: -8px;
+			bottom: 0px;
+			z-index: -1;
+		}
+		.box li:after,
+		.box li.active:after{
+			width: 0;
+			height: 0;
+			border-bottom: 18px solid #474747;
+			border-left: 14px solid transparent;
+			border-right: 9px solid transparent;
+			display: block;
+			content: "";
+			position: absolute;
+			right: -8px;
+			bottom: 0px;
+			z-index: -1;
+		}
+		.box li.li_1:before,
+		.box li.li_3:after{
+			display: none !important;
+		}	
+		
+	</style>
+	<title>项目</title>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li class="li_1 active"><span><b></b><b class="b2"></b><em>产品资料库</em></span></li>
+			<li class="li_2"><span><b></b><b class="b2"></b><em>驱动程序/固化软件</em></span></li>
+			<li class="li_3"><span><b></b><b class="b2"></b><em>常见问题</em></span></li>
+		</ul>
+	</div>
+</body>
+
+<script type="text/javascript">
+	$(function(){
+		$(".box li").click(function(){
+			$(".box li").removeClass("active");
+			$(this).addClass("active");
+			if($(this).index() == 2){
+				$(".box li").eq(1).css("z-index","3");
+			}
+		});
+	});
+</script>
+</html>
