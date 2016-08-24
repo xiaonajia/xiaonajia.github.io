@@ -1,0 +1,109 @@
+<!DOCTYPE >
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="prettify.css" />
+	<link rel="stylesheet" type="text/css" href="skill.css" />
+	<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="prettify.js"></script>
+	<title>IE中背景透明元素无法触发hover</title>
+	<style type="text/css">
+		.container{
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		pre{
+			margin-top: 0 !important;
+		}
+		.tips{
+			padding: 5px 0;
+		}
+		.bubble_hover{
+			cursor: pointer;
+			color: blue;
+			padding-left: 40px;
+			width: 130px;
+			/*background: #ff0;*/
+		}
+		.bubble_con{
+			display: none;
+			padding: 10px;
+			border: 1px solid blue;
+			width: 100px;
+			margin: 10px 0;
+		}
+		.bubble_hover:hover + .bubble_con{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="title">IE中背景透明元素无法触发hover</div>
+		</div>
+		<div class="row">
+			<div class="big_title">最近，遇到了一个IE浏览器下的兼容性的bug，产品需求如下图：</div>
+			<div class="tips">
+				<p><img src="images/02_1.jpg" /></p>
+			</div>
+			<div class="big_title">举个例子，代码如下：</div>
+			<!--代码部分-->
+<pre class="prettyprint lang-html linenums:1"><xmp><style type="text/css">
+	.bubble_hover{
+		cursor: pointer;
+		color: blue;
+		padding-left: 40px;
+		width: 130px;
+	}
+	.bubble_con{
+		display: none;
+		padding: 10px;
+		border: 1px solid blue;
+		width: 100px;
+		margin: 10px 0;
+	}
+	.bubble_hover:hover + .bubble_con{
+		display: block;
+	}
+</style>
+<div class="bubble">
+	<div class="bubble_hover"></div>
+	<div class="bubble_con">这里是内容</div>
+</div></xmp></pre>
+<!--代码部分-->
+		</div>
+		<div class="row">
+			<div class="big_title">效果如下：</div>
+			<div class="bubble">
+				<div class="bubble_hover">鼠标悬停</div>
+				<div class="bubble_con">这里是内容</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="big_title">问题描述：</div>
+			<div class="tips">
+				<p>在大部分的浏览器中，都可以正常显示，除了IE。</p>
+				<p>IE中，鼠标悬停，发现，啥都没有，根本不带动的啊，于是，F12，看看元素，发现元素也有啊，可是为啥不动嘞？查了查资料，发现：</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="big_title">解决办法：</div>
+			<div class="tips">
+				<p class="red">网上很多说法说的是，背景透明，或者不加背景，无法触发hover伪类，貌似这是个很经典的IEbug呀，涨姿势了~</p>
+			</div>
+<!---->
+<pre class="prettyprint lang-css linenums:1">.bubble_hover{
+	cursor: pointer;
+	color: blue;
+	padding-left: 40px;
+	width: 130px;
+	background: #f00; /*加背景*/
+}</pre>
+<!---->
+		</div>
+	</div>
+</body>
+</html>

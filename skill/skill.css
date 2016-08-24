@@ -14,6 +14,11 @@ ol {
 }
 
 /********公共样式*******/
+.title{
+	text-align: center;
+	font-size: 24px;
+	padding: 10px 0 30px;
+}
 /*大标题*/
 .big_title{
 	font-size: 16px;
@@ -29,6 +34,9 @@ ol {
 	line-height: 24px;
 	text-indent: 2em;
 }
+.red{
+	color: red;
+}
 /*显示代码块*/
 pre{
 	background: #eee;
@@ -36,11 +44,11 @@ pre{
 	font-size: 15px;
 	font-size: 1.5rem;
 	line-height: 1.6;
-	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
 	margin: 10px 0;
+	white-space: pre-wrap !important;
 }
 pre ol{
 	list-style: decimal;
@@ -54,5 +62,6 @@ pre ol li{
 	font-size: 16px;
 }
 pre ol li span{
+	white-space: pre-wrap !important;
 	font-family: "courier new";
 }
