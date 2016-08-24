@@ -1,0 +1,46 @@
+<!DOCTYPE >
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="prettify.css" />
+	<link rel="stylesheet" type="text/css" href="skill.css" />
+	<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="prettify.js"></script>
+	<title>meta标签的作用</title>
+	<style type="text/css">
+		pre{
+			margin-top: 0 !important;
+		}
+		.tips{
+			padding: 5px 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="big_title">1. IOS禁止识别数字为电话号码：</div>
+			<div class="tips">在IOS上会默认识别数字为电话号码</div>
+			<pre class="prettyprint lang-html linenums:1"><xmp><meta name="format-detection" content="telephone=no" /></xmp></pre>
+		</div>
+		<div class="row">
+			<div class="big_title">2. IOS中Safari允许全屏浏览：</div>
+			<pre class="prettyprint lang-html linenums:1"><xmp><meta content="yes" name="apple-mobile-web-app-capable" /></xmp></pre>
+		</div>
+		<div class="row">
+			<div class="big_title">3. IOS中Safari顶端状态条样式：</div>
+			<pre class="prettyprint lang-html linenums:1"><xmp><meta content="black" name="apple-mobile-web-app-status-bar-style" /></xmp></pre>
+		</div>
+		<div class="row">
+			<div class="big_title">4. 忽略Android平台中对邮箱地址的识别：</div>
+			<pre class="prettyprint lang-html linenums:1"><xmp><meta name="format-detection" content="email=no" /></xmp></pre>
+		</div>
+		<div class="row">
+			<div class="big_title">5. 通用：</div>
+			<pre class="prettyprint lang-html linenums:1"><xmp><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/></xmp></pre>
+		</div>
+	</div>
+</body>
+</html>

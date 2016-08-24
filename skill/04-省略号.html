@@ -1,0 +1,59 @@
+<!DOCTYPE >
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="prettify.css" />
+	<link rel="stylesheet" type="text/css" href="skill.css" />
+	<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="prettify.js"></script>
+	<script type="text/javascript" src="jquery.dotdotdot.min.js"></script>
+	<title>超出显示省略号</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="big_title">1.单行超出显示点点点<span class="red">（适用于 PC 和 mobile）</span></div>
+			<div>
+<pre class="prettyprint lang-css linenums:1">.ellipsis{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="big_title">2.多行超出显示点点点<span class="red">（适用于 mobile）</span></div>
+			<div class="tips">
+				<p>在WebKit浏览器或移动端（绝大部分是WebKit内核的浏览器）的页面中，可以直接使用WebKit的CSS扩展属性(WebKit是私有属性)-webkit-line-clamp ；</p>
+				<p><strong>-webkit-line-clamp</strong>用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。</p>
+			</div>
+			<pre class="prettyprint lang-css linenums:1">.ellipsis{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box; /*将对象作为弹性伸缩盒子模型显示*/
+	-webkit-line-clamp: 2; /*行数*/
+	-webkit-box-orient: vertical; /*设置或检索伸缩盒对象的子元素的排列方式 */
+}</pre>
+		</div>
+
+		<div class="row">
+			<div class="big_title">3.多行超出显示点点点<span class="red">（适用于 PC + mobile）</span></div>
+			<div>
+				<pre class="prettyprint lang-html linenums:1">
+<xmp><script type="text/javascript" src="jquery.dotdotdot.min.js"></script>
+<p class="dotdotdot">这里是超出的文字，需要定高度，才能在多行显示</p></xmp></pre>
+
+				<pre class="prettyprint lang-js linenums:1">$(function (){
+	$(".dotdotdot").dotdotdot();
+});</pre>
+				<pre class="prettyprint lang-css linenums:1">.dotdotdot{
+	height: 100px;
+}</pre>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
