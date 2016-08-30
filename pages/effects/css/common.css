@@ -32,21 +32,21 @@
 	right: 0;
 	border-top-color: #44e7ba;
 	border-right-color: #44e7ba;
-	animation: circleAnimateRight 0.3s linear 1;
-	-webkit-animation: circleAnimateRight 0.3s linear 1;
+	animation: circleAnimateRight 0.22s linear 1;
+	-webkit-animation: circleAnimateRight 0.22s linear 1;
 }
 .correct_mark .wrapper .left_circle{
 	left: 0;
 	border-bottom-color: #44e7ba;
 	border-left-color: #44e7ba;
-	animation: circleAnimateLeft 0.3s linear 1;
-	-webkit-animation: circleAnimateLeft 0.3s linear 1;
+	animation: circleAnimateLeft 0.22s linear 1;
+	-webkit-animation: circleAnimateLeft 0.22s linear 1;
 }
 .correct_mark .check_animate{
 	width: 100%;
 	overflow: hidden;
-	animation: expandw linear 0.3s 0.35s forwards;
-	-webkit-animation: expandw linear 0.3s 0.35s forwards;
+	animation: expandw linear 0.3s 0.27s forwards;
+	-webkit-animation: expandw linear 0.3s 0.27s forwards;
 	opacity: 0;
 	position: absolute;
 	left: 50%;
