@@ -1,3 +1,21 @@
+h3{
+	text-align: center;
+	font-family: "微软雅黑";
+	padding: 0 0 30px;
+}
+.col-md-3:nth-child(4n+1){
+	clear: both;
+}
+.col-md-3 > div{
+	min-height: 80px;
+}
+
+/**/
+.tips{
+	padding: 10px 0;
+}
+
+/*对勾动画*/
 .correct_mark{
 	position: relative;
 	width: 64px;
@@ -32,22 +50,16 @@
 	right: 0;
 	border-top-color: #44e7ba;
 	border-right-color: #44e7ba;
-	animation: circleAnimateRight 0.22s linear 1;
-	-webkit-animation: circleAnimateRight 0.22s linear 1;
 }
 .correct_mark .wrapper .left_circle{
 	left: 0;
 	border-bottom-color: #44e7ba;
 	border-left-color: #44e7ba;
-	animation: circleAnimateLeft 0.22s linear 1;
-	-webkit-animation: circleAnimateLeft 0.22s linear 1;
 }
 .correct_mark .check_animate{
 	width: 100%;
 	overflow: hidden;
-	animation: expandw linear 0.3s 0.27s forwards;
-	-webkit-animation: expandw linear 0.3s 0.27s forwards;
-	opacity: 0;
+
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -57,6 +69,22 @@
 	width: 34px;
 	height: 25px;
 	display: block;
+}
+.correct_mark:hover{
+	cursor: pointer;
+}
+.correct_mark:hover .right_circle{
+	animation: circleAnimateRight 0.5s linear 1;
+	-webkit-animation: circleAnimateRight 0.55s linear 1;
+}
+.correct_mark:hover .left_circle{
+	animation: circleAnimateLeft 0.5s linear 1;
+	-webkit-animation: circleAnimateLeft 0.55s linear 1;
+}
+.correct_mark:hover .check_animate{
+	opacity: 0;
+	animation: expandw linear 0.3s 0.55s forwards;
+	-webkit-animation: expandw linear 0.3s 0.55s forwards;
 }
 
 @-webkit-keyframes expandw{
@@ -129,12 +157,129 @@
 	}
 }
 
+/*图片放大*/
+.img_enlarge img{
+	transition: transform 0.3s ease-out;
+	-webkit-transition: transform 0.3s ease-out;
+	cursor: pointer;
+}
+.img_enlarge:hover img{
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+/*hi-闪烁*/
+.sparking{
+	-webkit-animation: Sparking 3s 2s infinite;
+	animation: Sparking 3s 2s infinite;
+}
+@-webkit-keyframes Sparking{
+	0%,50%,100%{
+		opacity: 1;
+	}
+	25%,75%{
+		opacity: 0;
+	}
+}
+@keyframes Sparking{
+	0%,50%,100%{
+		opacity: 1;
+	}
+	25%,75%{
+		opacity: 0;
+	}
+}
+
+/*floating-上下浮动*/
+.floating{
+	-webkit-animation: Floating 2s infinite alternate;
+	animation: Floating  2s infinite alternate;
+}
+@-webkit-keyframes Floating {
+	0%{
+		-webkit-transform: translateY(-6px);
+	}
+	100%{
+		-webkit-transform: translateY(6px);
+	}
+}
+@keyframes Floating {
+	0%{
+		-webkit-transform: translateY(-6px);
+		-moz-transform: translateY(-6px);
+		-ms-transform: translateY(-6px);
+		-o-transform: translateY(-6px);
+		transform: translateY(-6px);
+	}
+	100%{
+		-webkit-transform: translateY(6px);
+		-moz-transform: translateY(6px);
+		-ms-transform: translateY(6px);
+		-o-transform: translateY(6px);
+		transform: translateY(6px);
+	}
+}
+
+/*锁--左右晃动*/
+.lock:hover{
+	-webkit-animation: shake 0.8s;
+	animation: shake 0.8s;
+}
+@-webkit-keyframes shake {
+	0%,100% {
+		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0)
+	}
+	12.5%,37.5%,62.5%,87.5%{
+		-webkit-transform: translate3d(-3px,0,0);
+		transform: translate3d(-3px,0,0)
+	}
+	25%,50%,75%{
+		-webkit-transform: translate3d(3px,0,0);
+		transform: translate3d(3px,0,0)
+	}
+}
+@keyframes shake {
+	0%,100% {
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0)
+	}
+	12.5%,37.5%,62.5%,87.5%{
+		-webkit-transform: translate3d(-3px,0,0);
+		-ms-transform: translate3d(-3px,0,0);
+		transform: translate3d(-3px,0,0)
+	}
+	25%,50%,75%{
+		-webkit-transform: translate3d(3px,0,0);
+		-ms-transform: translate3d(3px,0,0);
+		transform: translate3d(3px,0,0)
+	}
+}
 
 
-
-
-
-
+/*练习*/
+/*effect-lily*/
+.effect_lily{
+	width: 100%;
+	max-height: 320px;
+	overflow: hidden;
+}
+.effect_lily img{
+	opacity: 0.7;
+	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+	transition: opacity 0.5s, transform 0.5s;
+	-webkit-transform: translate3d(-40px,0,0);
+	transform: translate3d(-40px,0,0);
+}
+.effect_lily:hover img{
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
 
 
 
