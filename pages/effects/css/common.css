@@ -1,6 +1,16 @@
-h3{
-	text-align: center;
+h1,h2,h3,h4,h5,h6,p,ul,li,ol{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+body{
 	font-family: "微软雅黑";
+	background: #2f3238;
+	color: #fff;
+}
+h3{
+	color: #fff;
+	text-align: center;
 	padding: 0 0 30px;
 }
 .col-md-3:nth-child(4n+1){
@@ -13,6 +23,7 @@ h3{
 /**/
 .tips{
 	padding: 10px 0;
+	color: #fff;
 }
 
 /*对勾动画*/
@@ -259,27 +270,207 @@ h3{
 		transform: translate3d(3px,0,0)
 	}
 }
-
+/*关闭*/
+.close_wrap img{
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.close_wrap:hover img{
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+/*点击图片-展开*/
+.fold h4{
+	margin: 0;
+	color: #fff;
+	font-size: 16px;
+	letter-spacing: 3px;
+	line-height: 22px;
+	cursor: pointer;
+	padding: 2px 0 2px 30px;
+	background: url(../images/tips_icon_01.png) 0 0 no-repeat;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.fold h4:hover{
+	color: #7fadeb;
+	background: url(../images/tips_icon_02.png) 0 0 no-repeat;
+}
 
 /*练习*/
 /*effect-lily*/
 .effect_lily{
 	width: 100%;
-	max-height: 320px;
+	max-height: 280px;
 	overflow: hidden;
+	position: relative;
+	cursor: pointer;
 }
 .effect_lily img{
 	opacity: 0.7;
-	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-	transition: opacity 0.5s, transform 0.5s;
 	-webkit-transform: translate3d(-40px,0,0);
 	transform: translate3d(-40px,0,0);
+	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+	transition: opacity 0.5s, transform 0.5s;
 }
-.effect_lily:hover img{
+.effect_lily .words{
+	position: absolute;
+	left: 0;
+	bottom: 60px;
+	width: 100%;
+	padding: 0 0 0 20px;
+	color: #fff;
+}
+.effect_lily .words h2,
+.effect_lily .words p{
+	-webkit-transform: translate3d(0,20px,0);
+	transform: translate3d(0,20px,0);
+}
+.effect_lily .words h2{
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+.effect_lily .words p{
+	opacity: 0;
+	-webkit-transition: opacity 0.5s 0.08s, -webkit-transform 0.5s 0.08s;
+	transition: opacity 0.5s 0.08s, transform 0.5s 0.08s;
+}
+.effect_lily:hover img,
+.effect_lily:hover .words p{
+	opacity: 1;
+}
+.effect_lily:hover img,
+.effect_lily:hover .words h2,
+.effect_lily:hover .words p{
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+/*effect_sadie*/
+.effect_sadie{
+	width: 100%;
+	max-height: 280px;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+.effect_sadie img{
+	opacity: 0.8;
+}
+.effect_sadie .words{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.effect_sadie .words h2{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	margin: 0;
+	color: #484c61;
+	text-align: center;
+	-webkit-transform: translate3d(0,-50%,0);
+	transform: translate3d(0,-50%,0);
+	-webkit-transition: color,-webkit-transform 0.35s;
+	transition: color,transform 0.35s;
+}
+.effect_sadie:hover .words h2{
+	color: #fff;
+	-webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+	transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+}
+.effect_sadie .words p{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 2em;
+	color: #fff;
+	text-align: center;
+	width: 100%;
+	opacity: 0;
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+	-webkit-transition: opacity,-webkit-transform 0.35s;
+	transition: opacity,transform 0.35s;
+}
+.effect_sadie:hover .words p{
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
+.effect_sadie .layer{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: -webkit-linear-gradient(top, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+	background: linear-gradient(top, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+	opacity: 0;
+	-webkit-transform: translate3d(0,50%,0);
+	transform: translate3d(0,50%,0);
+	-webkit-transition: opacity,-webkit-transform 0.35s;
+	transition: opacity,-webkit-transform 0.35s;
+}
+.effect_sadie:hover .layer{
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+/*effect_Honey*/
+.effect_Honey{
+	width: 100%;
+	max-height: 280px;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+.effect_Honey img{
+	opacity: 0.8;
+}
+.effect_Honey:hover img{
+	opacity: 0.9;
+}
+.effect_Honey .words h2{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 30px;
+	color: #fff;
+	-webkit-transform: translate3d(0,-30px,0);
+	transform: translate3d(0,-30px,0);
+	-webkit-transition: all 0.35s;
+	transition: all 0.35s;
+}
+.effect_Honey .words p{
+	width: 100%;
+	height: 10px;
+	background: #fff;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+	-webkit-transition: all 0.35s;
+	transition: all 0.35s;
+}
+.effect_Honey:hover .words h2,
+.effect_Honey:hover .words p{
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+
+
+
+
+
+
+
 
 
 
