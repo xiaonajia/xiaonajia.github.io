@@ -27,6 +27,8 @@
 $(function() {
 	imagesLoaded();
 
+
+
 	$("img.lazy").lazyload({
 		effect: "fadeIn",
 		threshold: 200,
@@ -36,7 +38,8 @@ $(function() {
 	function imagesLoaded(){
 		$('#masonry').masonry({
 			itemSelector: '.box',
-			gutter: 20
+			gutter: 20,
+			fitWidth: true
 		});
 	}
 
@@ -52,8 +55,6 @@ $(function() {
 		"images/9.png"
 	];
 
-	$(document).trigger('whenever-i-want');
-
 	$(".btn").click(function (){
 		//这里调接口
 		imgUrl.forEach(function(i, index ) {
@@ -67,12 +68,14 @@ $(function() {
 				$('#masonry').append($item).masonry('reload');
 			});
 		});
+		var top = $(document).scrollTop() + 1;
+		$("html,body").animate({scrollTop: top});
 	});
 });
 </script>
 </head>
 <body style="padding: 60px 0;">
-	<div id="masonry" class="container">
+	<div id="masonry" style="margin: 0 auto;">
 		<div class="box"><img class="lazy" src="images/loading_80.gif" data-original="images/1.png"></div>
 		<div class="box"><img class="lazy" src="images/loading_80.gif" data-original="images/2.png"></div>
 		<div class="box"><img class="lazy" src="images/loading_80.gif" data-original="images/3.png"></div>
