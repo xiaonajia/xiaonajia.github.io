@@ -30,6 +30,62 @@ h3{
 	color: #fff;
 }
 
+/*表单动画*/
+.input_wrap{
+	padding-bottom: 50px;
+}
+.input_layout{
+	width: 500px;
+	margin: 40px auto 0;
+	position: relative;
+}
+.input_layout input{
+	border: 0;
+	border-radius: 0;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	margin-bottom: 9px;
+	color: #fff;
+	padding-left: 0;
+}
+.input_layout input:focus{
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	outline: 0;
+	border-color: #fff;
+}
+.input_layout .line{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background: #ff507c;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
+}
+.input_layout input:focus ~ .line{
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+.input_layout label{
+	position: absolute;
+	left: 0;
+	top: 6px;
+	color: #fff;
+	font-size: 14px;
+	letter-spacing: 3px;
+	-webkit-transition: all 0.2s;
+}
+.input_layout input:focus ~ label{
+	top: -30px;
+	color: #f36;
+	font-size: 12px;
+}
+
 /*对勾动画*/
 .correct_mark{
 	position: relative;
