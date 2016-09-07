@@ -1,0 +1,42 @@
+<!DOCTYPE >
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<title>全选</title>
+<link rel="stylesheet" type="text/css" href="../../../css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css" />
+<script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
+<style type="text/css">
+	.container{
+		padding: 20px;
+	}
+</style>
+<script type="text/javascript">
+	$(function (){
+		$(".quanbu").change(function (){
+			var is_checked = $(this).prop("checked");
+			var all_city = $(".city");
+			if(is_checked){//如果是选中
+				all_city.prop("checked", true);
+			}else{
+				all_city.prop("checked", false);
+			}
+		});
+	});
+</script>
+</head>
+<body style="padding: 60px 0;">
+	<div class="container">
+		<div>
+			<p><b>一级城市</b></p>
+			<label  class="dib"><input class="quanbu" type="checkbox"  value="0">全部</label>
+			<label class="dib"><input class="city" type="checkbox" name="city" value="1">北京</label>
+			<label class="dib"><input class="city" type="checkbox" name="city" value="2">上海</label>
+			<label class="dib"><input class="city" type="checkbox" name="city" value="3">广州</label>
+			<label class="dib"><input class="city" type="checkbox" name="city" value="4">深圳</label>
+		</div>
+	</div>
+</body>
+</html>
