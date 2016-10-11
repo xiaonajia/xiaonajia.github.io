@@ -1,0 +1,91 @@
+<!DOCTYPE >
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />-->
+	<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
+	<title>处理图片</title>
+	<style type="text/css">
+	 	.form-control{
+			border: 3px solid #EBEBEB;
+			border-radius: 3px;
+			float: left;
+			width: 65%;
+			height: 50px;
+			font-size: 16px;
+			color: #999999;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+	 	.form-control:focus {
+			border: 3px solid #7FADEB;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+	</style>
+</head>
+<body style="padding: 60px 0; background: #fff;">
+
+<input type="text" class="form-control telInput" placeholder="输入联系电话" style="
+    -webkit-appearance: none;
+">
+
+
+	<button id="button" class="btn btn-primary" type="button">点击查看图片</button>
+	<div id="div"></div>
+	<script type="text/javascript">
+		var $box = document.querySelector("#div"),
+			$button = document.querySelector("#button");
+		var c = 20,
+			r = 10;
+		var w = $box.offsetWidth / c,
+			h = $box.offsetHeight / r;
+
+		function Random(start, end){
+			return Math.random() * (end - start) + start;
+		}
+		$button.onclick = function() {
+			$box.classList.toggle("set");
+		}
+		for(var i = 0; i < r; i++){
+			for(var j = 0; j < c; j++){
+				var _div = document.createElement("div");
+				var _left = j * w;
+				var _top = i * h;
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
