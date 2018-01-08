@@ -1,0 +1,104 @@
+<!DOCTYPE >
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="../css/index.css" />
+	<title>入口</title>
+	<style type="text/css">
+		#clock1 img{
+			width: 50px;
+			margin: 10px 0;
+		}
+	</style>
+	<script type="text/javascript" src="common.js"></script>
+	<script type="text/javascript" >
+	window.onload = function (){
+		autoPlayClock('clock1');
+		slidePlayClock('clock2');
+	}	
+	</script>
+</head>
+<body>
+	<head class="navbar navbar-static-top">
+		<div class="container">
+			<ul class="nav navbar-nav">
+			  	<li role="presentation" class="active"><a href="#">主页1</a></li>
+			  	<li role="presentation"><a href="">页面布局</a></li>
+			  	<li role="presentation"><a href="skill/index.html">常用技巧</a></li>
+				<li role="presentation"><a href="#">效果</a></li>
+			  	<li role="presentation"><a href="#">插件api</a></li>
+			  	<li role="presentation"><a href="#">遗留问题</a></li>
+			  	<li role="presentation"><a href="project/index.html">项目</a></li>
+			</ul>
+		</div>
+	</head>
+	<div id="clock1"></div>
+	<style type="text/css">
+		#clock2 li{
+			width: 50px;
+			height: 50px;
+			float: left;
+			overflow: hidden;
+			position: relative;
+		}
+		#clock2 li div{
+			width: 100%;
+			vertical-align: top;
+			position: absolute;
+			left: 0;
+		}
+		#clock2 li img{
+			width: 100%;
+		}
+	</style>
+	<div id="clock2">
+		<ul>
+			<li>
+				<div>
+					<img src="img/0.png" />
+					<img src="img/1.png" />
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="img/0.png" />
+					<img src="img/1.png" />
+				</div>
+			</li>
+			<li>
+				<img src="img/10.png" />
+			</li>
+			<li>
+				<div>
+					<img src="img/0.png" />
+					<img src="img/1.png" />
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="img/0.png" />
+					<img src="img/1.png" />
+				</div>
+			</li>
+			<li>
+				<img src="img/10.png" />
+			</li>
+			<li>
+				<div>
+					<img src="img/0.png" />
+					<img src="img/1.png" />
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="img/0.png" />
+					<img src="img/1.png" />
+				</div>
+			</li>
+		</ul>
+	</div> 
+</body>
+</html>
