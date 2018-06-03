@@ -1,0 +1,68 @@
+<!DOCTYPE >
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="../css/index.css" />
+	<title>弹窗</title>
+	<script type="text/javascript" src="common.js"></script>
+</head>
+<body>
+
+	<style type="text/css">
+
+		.dialog{
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: #fff;
+			border: 1px solid #000;
+		}
+
+		.dialog .title{
+			height: 30px;
+			background: gray;
+			color: #fff; 
+		}
+		.dialog .close{
+			float: right;
+			color: #fff;
+		}
+
+	</style>
+
+	<div id="dialogInput">
+		<input type="button" value="弹窗1" />
+		<input type="button" value="弹窗2" />
+	</div>
+
+	<script type="text/javascript">
+
+		window.onload = function (){
+
+			//弹窗组件
+			var oDialogBtn = document.getElementById("dialogInput").getElementsByTagName("input");
+			oDialogBtn[0].onclick = function (){
+				var dialog = new Dialog();
+				dialog.init({
+					title: '登录'
+				});
+			}
+			oDialogBtn[1].onclick = function (){
+				var dialog = new Dialog();
+				dialog.init({ //配置参数
+					w: 200,
+					h: 300,
+					pos: 'right',
+					title: '广告'
+				});
+			}
+		}
+
+	</script>
+
+	
+</body>
+</html>

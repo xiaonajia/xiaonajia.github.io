@@ -1,0 +1,93 @@
+<!DOCTYPE >
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="../css/index.css" />
+	<title>选项卡</title>
+	<script type="text/javascript" src="common.js"></script>
+</head>
+<body>
+
+	<style type="text/css">
+		.tab{
+			clear: both;
+			padding: 10px 0; 
+		}
+		.tab input{
+			width: 100px;
+		}
+		.tab .active{
+			background: red;
+		}
+		.tab div{
+			display: none;
+			width: 200px;
+		}
+
+		.drag{
+			position: absolute;
+			left: 100px;
+			top: 100px;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+
+		.dialog{
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: #fff;
+			border: 1px solid #000;
+		}
+
+		.dialog .title{
+			height: 30px;
+			background: gray;
+			color: #fff; 
+		}
+		.dialog .close{
+			float: right;
+			color: #fff;
+		}
+
+	</style>
+	
+	<div id = "tab" class="tab">
+		<input class="active" type="button" value = '1' />
+		<input type="button" value = '2' />
+		<input type="button" value = '3' />
+		<div style="display: block;">111</div>
+		<div>222</div>
+		<div>333</div>
+	</div>
+
+	<div id = "tab2" class="tab">
+		<input class="active" type="button" value = '1' />
+		<input type="button" value = '2' />
+		<input type="button" value = '3' />
+		<div style="display: block;">自动播放111</div>
+		<div>自动播放222</div>
+		<div>自动播放333</div>
+	</div>
+
+	<script type="text/javascript">
+
+		window.onload = function (){
+
+			//选项卡效果
+			var t1 = new Tab("tab");
+			t1.init();
+			var t2 = new Tab("tab2");
+			t2.init();
+			t2.autoPlay();
+		}
+
+	</script>
+
+	
+</body>
+</html>
