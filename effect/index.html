@@ -14,12 +14,6 @@
 		}
 	</style>
 	<script type="text/javascript" src="common.js"></script>
-	<script type="text/javascript" >
-	window.onload = function (){
-		autoPlayClock('clock1');
-		slidePlayClock('clock2');
-	}	
-	</script>
 </head>
 <body>
 	<head class="navbar navbar-static-top">
@@ -59,7 +53,7 @@
 			<li>
 				<div>
 					<img src="img/0.png" />
-					<img src="img/1.png" />
+					<img  src="img/1.png" />
 				</div>
 			</li>
 			<li>
@@ -100,5 +94,121 @@
 			</li>
 		</ul>
 	</div> 
+
+	<style type="text/css">
+		.tab{
+			clear: both;
+			padding: 10px 0; 
+		}
+		.tab input{
+			width: 100px;
+		}
+		.tab .active{
+			background: red;
+		}
+		.tab div{
+			display: none;
+			width: 200px;
+		}
+
+		.drag{
+			position: absolute;
+			left: 100px;
+			top: 100px;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+
+		.dialog{
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: #fff;
+			border: 1px solid #000;
+		}
+
+		.dialog .title{
+			height: 30px;
+			background: gray;
+			color: #fff; 
+		}
+		.dialog .close{
+			float: right;
+			color: #fff;
+		}
+
+	</style>
+
+	<div id = "tab" class="tab">
+		<input class="active" type="button" value = '1' />
+		<input type="button" value = '2' />
+		<input type="button" value = '3' />
+		<div style="display: block;">111</div>
+		<div>222</div>
+		<div>333</div>
+	</div>
+
+	<div id = "tab2" class="tab">
+		<input class="active" type="button" value = '1' />
+		<input type="button" value = '2' />
+		<input type="button" value = '3' />
+		<div style="display: block;">自动播放111</div>
+		<div>自动播放222</div>
+		<div>自动播放333</div>
+	</div>
+
+	<img id="drag" class="drag" src="img/1.png"/>
+	<img id="drag2" class="drag" style="left: 0;" src="img/2.png"/>
+
+	<div id="dialogInput">
+		<input type="button" value="弹窗1" />
+		<input type="button" value="弹窗2" />
+	</div>
+
+	<script type="text/javascript">
+
+		window.onload = function (){
+			//时钟效果
+			autoPlayClock('clock1');
+			slidePlayClock('clock2');
+
+			//选项卡效果
+			var t1 = new Tab("tab");
+			t1.init();
+			var t2 = new Tab("tab2");
+			t2.init();
+			t2.autoPlay();
+
+			//拖拽效果
+			var drag = new Drag(); //父类
+			drag.init("drag");
+			
+			//拷贝继承
+			//var drag2 = new ChildDrag("drag2"); //子类
+			//drag2.init();
+
+			//弹窗组件
+			var oDialogBtn = document.getElementById("dialogInput").getElementsByTagName("input");
+			oDialogBtn[0].onclick = function (){
+				var dialog = new Dialog();
+				dialog.init({
+					title: '登录'
+				});
+			}
+			oDialogBtn[1].onclick = function (){
+				var dialog = new Dialog();
+				dialog.init({ //配置参数
+					w: 200,
+					h: 300,
+					pos: 'right',
+					title: '广告'
+				});
+			}
+		}
+
+	</script>
+
+	
 </body>
 </html>
